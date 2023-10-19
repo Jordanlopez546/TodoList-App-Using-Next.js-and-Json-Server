@@ -17,7 +17,8 @@ const TodoList: React.FC<TodoListProps> = ({tasks}) => {
                 {/* head */}
                 <thead>
                 <tr>
-                    <th className='font-bold text-black text-lg uppercase'>Tasks</th>
+                    <th className='font-bold text-black text-lg uppercase'>Title</th>
+                    <th className='font-bold text-black text-lg uppercase'>Expiry Date</th>
                     <th className='font-bold text-black text-lg uppercase pl-30'>Actions</th>
                 </tr>
                 </thead>

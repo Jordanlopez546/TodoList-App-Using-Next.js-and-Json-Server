@@ -1,8 +1,14 @@
 {
   "tasks": [
     {
-      "id": "98db2c80-f536-4f55-9ca9-a988cf1c0500",
-      "task": "new todo task, new one\n"
+      "id": "f77b3dec-8841-4237-b7cb-8c73552d830b",
+      "task": "new todo 2",
+      "date": "2023-10-20T00:00:00.000Z"
+    },
+    {
+      "id": "8bc4d26c-ff4d-4992-86ec-6d53ce9ba34b",
+      "task": "new todo",
+      "date": "2023-10-19T00:00:00.000Z"
     }
   ]
 }
