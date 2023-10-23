@@ -6,7 +6,9 @@ interface ModalProps {
     children: React.ReactNode
 }
 
+
 const Modal: React.FC<ModalProps> = ({modalOpen, setModalOpen, children}) => {
+    // setData([newValue, ...data])
     return (
         <div className={`modal ${modalOpen ? "modal-open" : ""} bg-white`}>
             <div className='modal-box relative bg-white'>

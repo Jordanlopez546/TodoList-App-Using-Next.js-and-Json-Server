@@ -25,6 +25,14 @@ const AddUpdateModal: React.FC<AddUpdateModalProps> = ({selectedDate, setSelecte
     const today = new Date();
     const minSelectableDate = addDays(today, 0); // Set a minimum date, 1 day after today
 
+    const handleModalOpen = () => {
+        if (action === 'Add') {
+            // Reset selectedDate to an empty string when opening the modal for adding a new task
+            setSelectedDate("");
+        }
+        setOpenModalUpdate(true);
+    }
+
     return (
         <>
             <Modal modalOpen={openModalUpdate} setModalOpen={setOpenModalUpdate}>
@@ -46,6 +54,7 @@ const AddUpdateModal: React.FC<AddUpdateModalProps> = ({selectedDate, setSelecte
                                 dateFormat='dd/MM/yyyy' // Set the desired format
                                 className='border border-gray-300 w-full bg-white rounded-md w-90 text-black'
                                 minDate={minSelectableDate} // Set the minimum selectable date
+                                
                                 />
 
                             <button type='submit' className='btn bg-blue-500 hover:bg-green text-white'>

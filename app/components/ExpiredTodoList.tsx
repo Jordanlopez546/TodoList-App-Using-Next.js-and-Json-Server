@@ -3,13 +3,13 @@
 import { ITask } from '@/types/tasks'
 import React from 'react'
 import Task from './Task';
+import ExpiredTask from './ExpiredTask';
 
 interface TodoListProps {
     tasks: ITask[]
-    setTasks: React.Dispatch<React.SetStateAction<ITask>>
 }
 
-const TodoList: React.FC<TodoListProps> = ({tasks, setTasks}) => {
+const ExpiredTodoList: React.FC<TodoListProps> = ({tasks}) => {
     const reversedTasks = [...tasks].reverse();
 
     return (
@@ -19,13 +19,12 @@ const TodoList: React.FC<TodoListProps> = ({tasks, setTasks}) => {
                 <thead>
                 <tr>
                     <th className='font-bold text-black text-lg uppercase'>Title</th>
-                    <th className='font-bold text-black text-lg uppercase'>Expiry Date</th>
-                    <th className='font-bold text-black text-lg uppercase pl-30'>Actions</th>
+                    <th className='font-bold text-black text-lg uppercase'>Expired Date</th>
                 </tr>
                 </thead>
                 <tbody>
                     {reversedTasks.map(task => (
-                        <Task key={task.id} task={task} setTasks={setTasks} />
+                        <ExpiredTask key={task.id} task={task} />
                     ))}
                 </tbody>
             </table>
@@ -33,4 +32,4 @@ const TodoList: React.FC<TodoListProps> = ({tasks, setTasks}) => {
     )
 }
 
-export default TodoList
+export default ExpiredTodoList
