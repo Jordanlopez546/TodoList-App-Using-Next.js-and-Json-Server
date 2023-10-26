@@ -37,7 +37,7 @@ const page = () => {
                     </Link>
                 </div>
             </div>
-            <ExpiredTodoList tasks={tasks} />
+            <ExpiredTodoList tasks={tasks} setTasks={setTasks} />
         </main>
     )
 }

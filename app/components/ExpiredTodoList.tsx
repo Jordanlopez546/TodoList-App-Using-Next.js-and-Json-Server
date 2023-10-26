@@ -7,9 +7,10 @@ import ExpiredTask from './ExpiredTask';
 
 interface TodoListProps {
     tasks: ITask[]
+    setTasks: React.Dispatch<React.SetStateAction<ITask>>
 }
 
-const ExpiredTodoList: React.FC<TodoListProps> = ({tasks}) => {
+const ExpiredTodoList: React.FC<TodoListProps> = ({tasks, setTasks}) => {
     const reversedTasks = [...tasks].reverse();
 
     return (
@@ -20,11 +21,12 @@ const ExpiredTodoList: React.FC<TodoListProps> = ({tasks}) => {
                 <tr>
                     <th className='font-bold text-black text-lg uppercase'>Title</th>
                     <th className='font-bold text-black text-lg uppercase'>Expired Date</th>
+                    <th className='font-bold text-black text-lg uppercase pl-30'>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                     {reversedTasks.map(task => (
-                        <ExpiredTask key={task.id} task={task} />
+                        <ExpiredTask key={task.id} task={task} setTasks={setTasks} />
                     ))}
                 </tbody>
             </table>
