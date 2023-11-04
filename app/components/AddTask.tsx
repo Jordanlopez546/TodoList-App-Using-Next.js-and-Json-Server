@@ -22,10 +22,10 @@ const AddTask: React.FC<AddTaskProps> = ({setTasks, tasks}) => {
     const [newTask, setNewTask] = useState<string>("");
     const [selectedDate, setSelectedDate] = useState<string>('');
 
-        const handleSubmitAddTodo: FormEventHandler<HTMLFormElement> = async (e) => {
+    const handleSubmitAddTodo: FormEventHandler<HTMLFormElement> = async (e) => {
         e.preventDefault();
 
-        if (newTask.trim() !== "") {
+        if (newTask.trim() !== "" && selectedDate !==  "") {
             const newValue = await addTodoTask({
                 id: uuidv4(),
                 task: newTask,
@@ -41,7 +41,7 @@ const AddTask: React.FC<AddTaskProps> = ({setTasks, tasks}) => {
             Swal.fire('Success!', 'The task was added successfully', 'success');
         }
         else{
-            alert("Textarea is empty. Add a task!");
+            Swal.fire('Error!', 'Fill up the inputs completely!', 'error');
         }
     }
 
